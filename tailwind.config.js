@@ -6,9 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        primary:"#3B82F6"
-      }
+      screens: {
+      'sm': '650px',
+      'md': '960px',
+      'lg': '1440px',
+      },
     },
   },
   plugins: [],

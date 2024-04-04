@@ -25,7 +25,7 @@ export default function Services() {
                         return (
                             <div
                                 key={i}
-                                className="xl:w-1/4 md:w-1/2 p-4"
+                                className="lg:w-1/4 sm:w-1/2 md:w-1/3 p-4"
                                 data-aos="fade-up"
                                 data-aos-duration="2000"
                             >
