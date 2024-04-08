@@ -1,0 +1,1 @@
+export const remittanceServices=["/banner-0.jpg","banner-1.jpg"]

@@ -27,6 +27,18 @@ const NavLink = ({ route, children }) => {
 export default function Header() {
     const [navActive, setNavActive] = useState(false);
     const [buttonActive, setButtonActive] = useState(false);
+    const [iconState,setIconState]=useState({
+      location:false,
+      phone:false
+    })
+    const toggleIcon=(type)=>{
+        if(type=="location"){
+          setIconState(p=>({location:!p.location,phone:false}))
+        }
+        if(type=="phone"){
+          setIconState(p=>({phone:!p.phone,location:false}))
+        }
+      }
     const getTime=()=>{
       let date=new Date()
       return `${date.getHours()%12}:${date.getMinutes()}:${date.getSeconds()}`
@@ -53,22 +65,25 @@ export default function Header() {
           <li><Link to="/interestrate" className="font-medium text-gray-600 hover:underline">Interest Rate</Link></li>
           </ul>
           </div>
-            <div className="w-full bg-gray-100 flex">
-                <img src="/logo.png" className="w-3/4 md:w-1/3" alt="logo" />
-                <div className="flex w-1/4 md:w-2/3 flex-row p-2 justify-center md:justify-end md:gap-7 md:px-3 gap-4 min-h-full items-center">
-                    <div className="text-blue-500 flex flex-col md:flex-row">
-                        <FaLocationDot className="text-base md:text-2xl lg:text-3xl" />
-                        <span className="md:flex hidden">
+            <div className="w-full bg-gray-100 flex h-20 items-center">
+                <img src="/logo.png" className="w-[70%] md:w-1/3 h-max" alt="logo" />
+                <div className="flex w-[30%] md:w-2/3 flex-row p-2 justify-start md:justify-end md:gap-7 md:px-3 gap-8 min-h-full items-center">
+                    <div className="text-blue-500 flex flex-col md:flex-row relative md:items-center ">
+                        <FaLocationDot className="text-base md:text-2xl lg:text-3xl" onClick={()=>toggleIcon("location")}/>
+                        <span className={`md:flex md:visible   ${iconState.location? "flex":"hidden"} md:static absolute top-6 md:top-0 md:bg-transparent bg-blue-500 md:text-blue-500 text-white z-[99] md:z-auto md:text-base text-sm md:tracking-normal rounded p-2 tracking-tight text-nowrap md:translate-x-0 -translate-x-[47%]`}>
+                        <span className="absolute w-3 h-3 rotate-45 bg-blue-500 rounded-sm top-0 left-1/2  -translate-y-1/2 -translate-x-0.5 md:hidden"> </span>
                             Fulbari,Pokhara-11,Kaski
                         </span>
                     </div>
-                    <div className="text-blue-500 flex flex-col md:flex-row">
-                        <IoCall className="text-base md:text-2xl lg:text-3xl" />
-                        <span className="hidden md:flex">+977 98460XXXXX </span>
+                    <div className="text-blue-500 flex flex-col md:flex-row relative">
+                        <IoCall className="text-base md:text-2xl lg:text-3xl" onClick={()=>toggleIcon("phone")}/>
+                      <span className={`md:flex md:visible   ${iconState.phone? "flex":"hidden"} md:static absolute top-6 md:top-0 md:bg-transparent bg-blue-500 md:text-blue-500 text-white z-[99] md:z-auto md:text-base text-sm md:tracking-normal rounded p-2 tracking-tight text-nowrap md:translate-x-0 -translate-x-[47%]`}>
+                        <span className="absolute w-3 h-3 rotate-45 bg-blue-500 rounded-sm top-0 left-1/2  -translate-y-1/2 -translate-x-0.5 md:hidden"> </span>
+                         98460XXXXX </span>
                     </div>
                 </div>
             </div>
-            <nav className="bg-gray-50 flex items-center px-2 py-1 box-border gap-4 sticky top-0  h-20 z-50">
+            <nav className="bg-gray-50 flex items-center px-2 py-1 box-border gap-4 sticky top-0  h-20 z-50 shadow-lg shadow-gray-400">
                 <div className="flex flex-col md:w-[88%] w-[30%]">
                     <button
                         className="text-2xl p-3 text-blue-500 md:hidden"
@@ -82,7 +97,7 @@ export default function Header() {
                     <ul
                         className={`md:w-full md:flex md:justify-between md:py-1 md:h-full items-center md:static md:flex-row overflow-hidden md:overflow-visible md:px-3 fixed flex-col h-[100vh] transition-all duration-500 delay-0 w-0 md:w-full ${
                             navActive ? "w-60" : ""
-                        } top-0 left-0 md:bg-transparent justify-between bg-gray-100 shadow-gray-300 md:gap-2 gap-1 py-2 z-20`}
+                        } top-0 left-0 md:bg-transparent justify-between bg-gray-100 shadow-gray-300 md:gap-2 gap-1 py-2 z-[999]`}
                     >
                         <div className="w-full flex justify-end md:hidden ">
                             <button
@@ -112,10 +127,10 @@ export default function Header() {
                     </button>
                     <div
                         className={`w-36   transition-all duration-500 delay-0 h-0 ${
-                            buttonActive ? "h-16" : ""
-                        } overflow-hidden flex flex-col rounded bg-gray-200 absolute top-12 right-0`}
+                            buttonActive ? "h-[74px]" : ""
+                        } overflow-hidden flex flex-col rounded bg-white shadow-sm shadow-gray-400 absolute top-12 gap-3 right-0`}
                     >
-                        <li className=" text-blue-500 font-medium list-none text-base border-b border-blue-500 px-2 pt-2">
+                        <li className=" text-blue-500 font-medium list-none  text-base px-2 pt-2">
                             Loan Form
                         </li>
                         <li className="text-blue-500 px-2 pb-2 font-medium list-none text-base text-nowrap">

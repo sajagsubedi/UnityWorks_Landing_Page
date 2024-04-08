@@ -1,5 +1,5 @@
 import React from "react"
-import {Carousel,Services,About,Savings,NewsFeed} from "../components/index.jsx"
+import {Carousel,Services,About,Savings,NewsFeed,Remittance,Achievements} from "../components/index.jsx"
 export default function HomePage(){
   return(
     <main>
@@ -8,6 +8,8 @@ export default function HomePage(){
     <About/>
     <Savings/>
     <NewsFeed/>
+    <Remittance/>
+    <Achievements/>
     </main>
     )
 }

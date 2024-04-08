@@ -12,7 +12,7 @@ export default function Carousel() {
         return () => {
             clearInterval(intervalId);
         };
-    }, []);
+    }, [banner]);
 
     useEffect(() => {
       setInterval(() => {
@@ -21,7 +21,7 @@ export default function Carousel() {
     }, []);
 
     return (
-        <section className="w-full h-[35vh] md:h-[45vh] ">
+        <section className="w-full h-auto ">
             <img
                 src={`banner-${banner}.jpg`}
                 className="w-full h-full"
@@ -31,17 +31,16 @@ export default function Carousel() {
                 <span
                     className={`min-w-2 min-h-2 rounded-full ${
                         banner == 0 ? "bg-blue-500" : "bg-gray-200"
-                    } `}
+                    } `} onClick={()=>setBanner(0)}
                 ></span>
                 <span
                     className={`min-w-2 min-h-2 rounded-full ${
                         banner == 1 ? "bg-blue-500" : "bg-gray-200"
-                    } `}
-                ></span>
+                    } `} onClick={()=>setBanner(1)}></span>
                 <span
                     className={`min-w-2 min-h-2 rounded-full ${
                         banner == 2 ? "bg-blue-500" : "bg-gray-200"
-                    } `}
+                    } `} onClick={()=>setBanner(2)}
                 ></span>
             </div>
         
