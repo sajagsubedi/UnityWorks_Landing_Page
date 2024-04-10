@@ -29,7 +29,7 @@ export default function EMICalculator() {
       setEmi(Number.parseInt(numerator/denominator))
     }
     return (
-        <form className="w-80 bg-white rounded-md h-max  drop-shadow-xl flex flex-col px-4 py-5 gap-3 justify-center items-center mt-12">
+        <form className="md:w-[320px] sm:w-80 w-[90vw] overflow-hidden bg-white rounded-md h-max  drop-shadow-xl flex flex-col px-4 py-5 gap-3 justify-center items-center mt-12">
             <h3 className="text-2xl text-gray-950 font-bold">EMI Calculator</h3>
             <div className="flex w-full flex-col">
                 <label

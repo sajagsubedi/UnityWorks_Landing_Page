@@ -1,1 +1,1 @@
-export const remittanceServices=["/banner-0.jpg","banner-1.jpg"]
+export const remittanceServices=["remittances/1.jpg","remittances/2.jpg","remittances/3.jpg","remittances/4.jpg","remittances/5.jpg","remittances/6.jpg","remittances/7.jpg","remittances/8.jpg","remittances/9.jpg","remittances/10.jpg","remittances/11.jpg",]

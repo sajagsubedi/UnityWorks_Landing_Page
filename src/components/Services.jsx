@@ -20,18 +20,16 @@ export default function Services() {
                         ,Financial Consulting Service are some of them.
                     </p>
                 </div>
-                <div className="flex flex-wrap -m-4">
+                <div className="flex flex-wrap flex-row -m-4">
                     {services.map((serviceItem, i) => {
                         return (
                             <div
                                 key={i}
-                                className="lg:w-1/4 sm:w-1/2 md:w-1/3 p-4"
-                                data-aos="fade-up"
-                                data-aos-duration="2000"
+                                className="lg:w-1/4 h-inherit sm:w-1/2 md:w-1/3 p-4"
                             >
-                                <div className="bg-gray-100 rounded-lg">
+                                <div className="bg-gray-100 rounded-lg h-full">
                                     <img
-                                        className="h-50 rounded w-full object-cover object-center mb-6"
+                                        className="h-auto rounded w-full object-cover object-center mb-6"
                                         src={serviceItem.img}
                                         alt="content"
                                     />

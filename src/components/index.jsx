@@ -11,5 +11,6 @@ import Notices from "./Notices.jsx"
 import EMICalculator from "./EMICalculator.jsx"
 import Remittance from "./Remittance.jsx"
 import Achievements from "./Achievements.jsx"
+import ScrollTopBtn from "./ScrollTopBtn.jsx"
 
-export { Header, Footer,Carousel ,Services,About,Savings,NewsFeed, Downloads,Notices,News,EMICalculator,Remittance,Achievements };
+export { Header, Footer,Carousel ,Services,About,Savings,NewsFeed, Downloads,Notices,News,EMICalculator,Remittance,Achievements,ScrollTopBtn };

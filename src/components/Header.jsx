@@ -57,7 +57,7 @@ export default function Header() {
           <span className="flex items-center gap-1"><FaRegCalendar className="font-medium"/> {new Date().toLocaleDateString()}</span>
           <span className="flex items-center gap-1"><IoMdTime className="font-medium text-xl"/>{currentTime}</span>
           </div>
-          <ul className="hidden md:flex gap-5 px-5 py-1 md:w-2/3 justify-end">
+          <ul className="hidden md:flex gap-10 px-5 py-1 md:w-2/3 justify-end">
           <li><Link to="/news_events" className=" text-gray-600 hover:underline font-medium">News & Events</Link></li>
           <li><Link to="/notices" className="font-medium text-gray-600 hover:underline">Notices</Link></li>
           <li><Link to="/downloads" className="font-medium text-gray-600 hover:underline">Downloads</Link></li>
@@ -75,7 +75,7 @@ export default function Header() {
                             Fulbari,Pokhara-11,Kaski
                         </span>
                     </div>
-                    <div className="text-blue-500 flex flex-col md:flex-row relative">
+                    <div className="text-blue-500 flex flex-col md:flex-row relative md:items-center">
                         <IoCall className="text-base md:text-2xl lg:text-3xl" onClick={()=>toggleIcon("phone")}/>
                       <span className={`md:flex md:visible   ${iconState.phone? "flex":"hidden"} md:static absolute top-6 md:top-0 md:bg-transparent bg-blue-500 md:text-blue-500 text-white z-[99] md:z-auto md:text-base text-sm md:tracking-normal rounded p-2 tracking-tight text-nowrap md:translate-x-0 -translate-x-[47%]`}>
                         <span className="absolute w-3 h-3 rotate-45 bg-blue-500 rounded-sm top-0 left-1/2  -translate-y-1/2 -translate-x-0.5 md:hidden"> </span>
